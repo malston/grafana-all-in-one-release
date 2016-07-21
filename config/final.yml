@@ -1,6 +1,6 @@
 ---
 blobstore:
-  provider: local
+  provider: s3
   options:
-    blobstore_path: /work/blobstore
-final_name: c0-graphite-grafana-new
+    bucket_name: bosh-grafana-all-in-one-release
+final_name: bosh-grafana-all-in-one-release
