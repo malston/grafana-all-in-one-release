@@ -10,22 +10,22 @@ name: <%= deployment_name %>
 director_uuid: <%= director_uuid %>
 
 releases:
-- name: c0-graphite-grafana-dev
+- name: bosh-grafana-all-in-one-release
   version: latest
 
 jobs:
 - name: grafana-node
   templates:
   - name: grafana
-    release: c0-graphite-grafana-dev
+    release: bosh-grafana-all-in-one-release
   - name: carbon
-    release: c0-graphite-grafana-dev
+    release: bosh-grafana-all-in-one-release
   - name: graphite-web
-    release: c0-graphite-grafana-dev
+    release: bosh-grafana-all-in-one-release
   - name: statsd
-    release: c0-graphite-grafana-dev
+    release: bosh-grafana-all-in-one-release
   - name: postgresql
-    release: c0-graphite-grafana-dev
+    release: bosh-grafana-all-in-one-release
   instances: 1
   resource_pool: small_z1
   persistent_disk: 4096
