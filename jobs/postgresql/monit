@@ -1,0 +1,4 @@
+check process postgresql
+  with matching "postgres -D /var/vcap/store/postgresql"
+  start program = "/var/vcap/jobs/postgresql/bin/postgres_ctl start" as uid vcap and gid vcap with timeout 30 seconds
+  stop program = "/var/vcap/jobs/postgresql/bin/postgres_ctl stop" as uid vcap and gid vcap

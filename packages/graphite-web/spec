@@ -1,0 +1,9 @@
+---
+name: graphite-web
+
+dependencies:
+  - python
+  - postgresql
+
+files:
+  - graphite-web/graphite-web-0.9.12.tar.gz # https://github.com/graphite-project/graphite-web/archive/0.9.12.tar.gz

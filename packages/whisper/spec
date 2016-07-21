@@ -1,0 +1,8 @@
+---
+name: whisper
+
+dependencies:
+  - python
+
+files:
+  - whisper/whisper-0.9.12.tar.gz # https://pypi.python.org/packages/88/97/090c6e0cadf14487e9902b44565c761332f235c93ebf036b2dcf65291234/whisper-0.9.12.tar.gz#md5=5fac757cc4822ab0678dbe0d781d904e

@@ -1,0 +1,6 @@
+---
+blobstore:
+  provider: local
+  options:
+    blobstore_path: /work/blobstore
+final_name: c0-graphite-grafana-new

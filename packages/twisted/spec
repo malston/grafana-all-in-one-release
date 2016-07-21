@@ -1,0 +1,8 @@
+---
+name: twisted
+
+dependencies:
+  - python
+
+files:
+  - twisted/Twisted-11.1.0.tar.bz2 # https://pypi.python.org/packages/c7/82/c71021c15625960e11b32cdba7c93bf9cdf79b9fe4f0a2dcde3a97ffcad3/Twisted-11.1.0.tar.bz2#md5=972f3497e6e19318c741bf2900ffe31c

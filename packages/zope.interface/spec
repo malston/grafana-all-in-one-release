@@ -1,0 +1,8 @@
+---
+name: zope.interface
+
+dependencies:
+  - python
+
+files:
+  - zope.interface/zope.interface-4.1.2.tar.gz # https://pypi.python.org/packages/29/04/ed171a21850aa1ff9b683b061f1168b3dc6461c6c7c4550b238e97fef197/zope.interface-4.1.2.tar.gz#md5=04298faeaa70b4f3b23fa2ae8987262c

@@ -1,0 +1,30 @@
+#!/bin/bash -exu
+
+function main() {
+
+  action="${1}"
+  grafanaver="grafana"
+
+  JOB_DIR=/var/vcap/jobs/${grafanaver}
+  PACKAGE_DIR="/var/vcap/packages/${grafanaver}"
+  STORE_DIR=/var/vcap/store
+  DATA_DIR="${STORE_DIR}/${grafanaver}"
+
+
+  case "${action}" in
+    "start")
+      $JOB_DIR/bin/grafana_start start &
+      $JOB_DIR/bin/create-update-datasources
+      ;;
+    "stop")
+      $JOB_DIR/bin/grafana_start stop
+      ;;
+    *)
+      echo "Usage: ${0} {start|stop}"
+      exit 1
+      ;;
+  esac
+
+}
+
+main "${1}"

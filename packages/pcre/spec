@@ -1,0 +1,7 @@
+---
+name: pcre
+
+dependencies: {}
+
+files:
+  - pcre/pcre-8.36.tar.gz  # http://downloads.sourceforge.net/project/pcre/pcre/8.36/pcre-8.36.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fpcre%2Ffiles%2Fpcre%2F8.36%2F&ts=1469043456&use_mirror=superb-sea2

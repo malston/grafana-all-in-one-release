@@ -1,0 +1,7 @@
+---
+name: freetype
+
+dependencies: {}
+
+files:
+  - freetype/freetype-2.5.5.tar.gz # http://downloads.sourceforge.net/project/freetype/freetype2/2.5.5/freetype-2.5.5.tar.gz?r=&ts=1469042536&use_mirror=superb-sea2

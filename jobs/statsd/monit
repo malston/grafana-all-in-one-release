@@ -1,0 +1,6 @@
+check process statsd
+  with pidfile /var/vcap/sys/run/statsd/statsd.pid
+  start program "/var/vcap/jobs/statsd/bin/statsd_ctl start" with timeout 30 seconds
+  stop program "/var/vcap/jobs/statsd/bin/statsd_ctl stop"
+  group vcap
+depends on postgresql

@@ -1,0 +1,197 @@
+<%
+  # Update these properties as required
+  deployment_name  = 'c0-graphite-bosh-lite'
+  director_uuid    = 'dc4e8b29-2f3a-4051-8b66-39193791a57b'
+  stemcell_name    = 'bosh-warden-boshlite-ubuntu-trusty-go_agent'
+  stemcell_version = 'latest'
+%>
+
+name: <%= deployment_name %>
+director_uuid: <%= director_uuid %>
+
+releases:
+- name: c0-graphite-grafana-dev
+  version: latest
+
+jobs:
+- name: grafana-node
+  templates:
+  - name: grafana
+    release: c0-graphite-grafana-dev
+  - name: carbon
+    release: c0-graphite-grafana-dev
+  - name: graphite-web
+    release: c0-graphite-grafana-dev
+  - name: statsd
+    release: c0-graphite-grafana-dev
+  - name: postgresql
+    release: c0-graphite-grafana-dev
+  instances: 1
+  resource_pool: small_z1
+  persistent_disk: 4096
+  networks:
+  - name: default
+    static_ips:
+    - 10.244.11.2
+
+properties:
+  carbon:
+    storage_schemas:
+      - name: "my_storage_schema"
+        pattern: "^my\\.metrics\\.*" # NB: Note the double escapes - this will evaluate to "^my\.metrics\.*"
+        retentions: "60s:1d"
+      - name: "my_storage_schema_2"
+        pattern: "metrics$"
+        retentions: "15s:7d,1m:21d,15m:5y"
+    storage_aggregations:
+      - name: "my_storage_aggregation"
+        pattern: "^my\\.metrics\\.*" # NB: Note the double escapes - this will evaluate to "^my\.metrics\.*"
+        xFilesFactor: "0.5"
+        aggregationMethod: "average"
+      - name: "my_storage_aggregation_2"
+        pattern: "metrics$"
+        xFilesFactor: "0.1"
+        aggregationMethod: "max"
+  graphite-web:
+    time_zone: America/Chicago
+    httpd:
+      port: 8080
+    db:
+      engine: postgresql_psycopg2
+      name: graphite-web
+      user: grafana
+      password: "gr4f4n4"
+      host: 127.0.0.1
+      port: 5432
+    wsgi:
+      inactivity-timeout: 60
+  databases:
+    db_scheme: postgres
+    port: 5432
+    log_line_prefix: grafana-db
+    databases:
+    - tag: graphite-web
+      name: graphite-web
+    - tag: grafana
+      name: grafana
+    roles:
+    - tag: grafana
+      name: grafana
+      password: "gr4f4n4"
+  grafana:
+    listen_port: 80
+    admin_username: grafana
+    admin_password: "gr4f4n4"
+    users:
+      allow_sign_up: true
+      auto_assign_organization: true
+    datasource:
+      url: "http://127.0.0.1:8080"
+      name: graphite
+      database_type: graphite
+      user: any
+      password: any
+      database_name: any
+    database:
+      type: postgres
+      host: 127.0.0.1:5432
+      name: grafana
+      user: grafana
+      password: "gr4f4n4"
+
+meta:
+  environment: <%= deployment_name %>
+  stemcell:
+    name: <%= stemcell_name %>
+    version: <%= stemcell_version %>
+
+resource_pools:
+- cloud_properties:
+    name: random
+  name: small_z1
+  network: default
+  size: 1
+  stemcell:
+    name: <%= stemcell_name %>
+    version: <%= stemcell_version %>
+
+compilation:
+  cloud_properties:
+    name: random
+  network: default
+  reuse_compilation_vms: true
+  workers: 4
+
+update:
+  canaries: 1
+  canary_watch_time: 1000-30000
+  max_in_flight: 50
+  serial: false
+  update_watch_time: 1000-30000
+
+networks:
+- name: default
+  subnets:
+  - cloud_properties:
+      name: random
+    range: 10.244.11.0/30
+    reserved:
+    - 10.244.11.1
+    static:
+    - 10.244.11.2
+  - cloud_properties:
+      name: random
+    range: 10.244.11.4/30
+    reserved:
+    - 10.244.11.5
+    static:
+    - 10.244.11.6
+  - cloud_properties:
+      name: random
+    range: 10.244.11.8/30
+    reserved:
+    - 10.244.11.9
+    static:
+    - 10.244.11.10
+  - cloud_properties:
+      name: random
+    range: 10.244.11.12/30
+    reserved:
+    - 10.244.11.13
+    static: []
+  - cloud_properties:
+      name: random
+    range: 10.244.11.16/30
+    reserved:
+    - 10.244.11.17
+    static: []
+  - cloud_properties:
+      name: random
+    range: 10.244.11.20/30
+    reserved:
+    - 10.244.11.21
+    static: []
+  - cloud_properties:
+      name: random
+    range: 10.244.11.24/30
+    reserved:
+    - 10.244.11.25
+    static: []
+  - cloud_properties:
+      name: random
+    range: 10.244.11.28/30
+    reserved:
+    - 10.244.11.29
+    static: []
+  - cloud_properties:
+      name: random
+    range: 10.244.11.32/30
+    reserved:
+    - 10.244.11.33
+    static: []
+  - cloud_properties:
+      name: random
+    range: 10.244.11.36/30
+    reserved:
+    - 10.244.11.37
+    static: []

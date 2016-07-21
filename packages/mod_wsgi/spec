@@ -1,0 +1,9 @@
+---
+name: mod_wsgi
+
+dependencies:
+  - httpd
+  - python
+
+files:
+  - mod_wsgi/mod_wsgi-4.4.9.tar.gz # https://pypi.python.org/packages/f0/ab/9965b8291d786eaa9696bdaf54ce55d9c2d57c7b73fb616783bfe082ede6/mod_wsgi-4.4.9.tar.gz#md5=5870d033d72a1cea78f4e0d67f0ac4d9

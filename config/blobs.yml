@@ -1,0 +1,129 @@
+---
+cairo/cairo-1.14.0.tar.xz:
+  object_id: e10f19c0-6b54-434e-95d6-ebb7b4c2c40d
+  sha: 53cf589b983412ea7f78feee2e1ba9cea6e3ebae
+  size: 36584076
+carbon/carbon-0.9.12.tar.gz:
+  object_id: 0931c7eb-1509-480b-ab5e-1c9ca1886ec9
+  sha: 7dad24c3a441a39af0f8d48315ca13649a2fda19
+  size: 52107
+django/Django-1.3.7.tar.gz:
+  object_id: b958a32c-692b-4107-98b1-37df6184ed88
+  sha: 511a56befe472b810f89b67376f3ef51c3aad8e7
+  size: 6514846
+django-tagging/django-tagging-0.3.1.tar.gz:
+  object_id: 76b9c648-61c9-4769-9753-ea5cbf7174fb
+  sha: f737bff307a21175b0dbacdb7969cd6bfff6f6ea
+  size: 31531
+expat/expat-2.1.0.tar.gz:
+  object_id: fc1b2d6e-e48d-4a95-b8af-9faaf39b467b
+  sha: b08197d146930a5543a7b99e871cba3da614f6f0
+  size: 562616
+fontconfig/fontconfig-2.11.1.tar.bz2:
+  object_id: 52568a02-6e10-405c-98ca-21fc5c1a010b
+  sha: 08565feea5a4e6375f9d8a7435dac04e52620ff2
+  size: 1516095
+freetype/freetype-2.5.5.tar.gz:
+  object_id: a74df8ac-d409-4b6f-a8e5-275009bb2581
+  sha: 884830e13a4ebd780150697bab7e172e902194c9
+  size: 2245805
+graphite-web/graphite-web-0.9.12.tar.gz:
+  object_id: 20fd3523-1c1b-432e-8ab4-761ee0a8f8a9
+  sha: 5d69c5a691ee34c3ea5013adaa5a79a243bc2e3e
+  size: 2334147
+httpd/apr-1.5.2.tar.gz:
+  object_id: dcf602b8-8c05-4314-aaee-8593b1bad0bb
+  sha: 2ef2ac9a8de7f97f15ef32cddf1ed7325163d84c
+  size: 1031613
+httpd/apr-util-1.5.4.tar.gz:
+  object_id: 56c0c5de-e49b-4c85-8c03-6677d9ae187d
+  sha: 72cc3ac693b52fb831063d5c0de18723bc8e0095
+  size: 874044
+httpd/httpd-2.4.23.tar.gz:
+  object_id: 2c9ee7c1-9d5e-4edf-b53f-d4937950d8d9
+  sha: 91898e6a7c010a5cd35855a67d1ec59914cbeee8
+  size: 8406575
+libpng/libpng-1.6.23.tar.gz:
+  object_id: f1328b1c-3071-4ebd-b597-9be477629d15
+  sha: 26c68ff9905dbeb85d1cc9c673726e9e0669e7a0
+  size: 1445853
+mocker/mocker-1.1.1.tar.bz2:
+  object_id: 2ad0d548-c104-4a13-ad7f-45031c4ab1f7
+  sha: f5eee623835366500ef13a3784146d3eb6e4545e
+  size: 36357
+mod_wsgi/mod_wsgi-4.4.9.tar.gz:
+  object_id: 1e16adfa-3921-4b8f-9df5-44a298842af1
+  sha: 3928033df9224ea4a804419e7c1d657f9fa22dc8
+  size: 977852
+node/node-v0.12.0.tar.gz:
+  object_id: 43e9c532-9ed5-4685-b7d7-6cdd9bc76250
+  sha: d08810034d170c19759cb38bfc9442ab6b0ebc7a
+  size: 19096897
+pcre/pcre-8.36.tar.gz:
+  object_id: 6361ac02-c36e-493f-862b-1f0b68e19592
+  sha: fb537757756818133d8157ec878bc11f5a93ef4d
+  size: 2009464
+pixman/pixman-0.32.6.tar.gz:
+  object_id: b509953b-eb52-49d7-a561-278e96245ca4
+  sha: 8791343cbf6d99451f4d08e8209d6ac11bf96df2
+  size: 816702
+psycopg2/psycopg2-2.6.2.tar.gz:
+  object_id: 473a8abd-9214-420d-88d5-0cfca3241e07
+  sha: 9964686caa8759b9eedfbc4f73e1e2665f6b6d7e
+  size: 376348
+py2cairo/py2cairo-1.10.0.tar.bz2:
+  object_id: 01799211-0176-4a3d-8107-46799b04593a
+  sha: 2efa8dfafbd6b8e492adaab07231556fec52d6eb
+  size: 402070
+pysqlite/pysqlite-2.6.3.tar.gz:
+  object_id: efe8cfaf-a506-4079-b8c1-5394f2222bba
+  sha: b1eed16107232aebec1826b671c99a76e26afa7b
+  size: 76416
+python/Python-2.7.9.tar.xz:
+  object_id: 496dac74-4f10-4a65-a051-60d98c8a7f81
+  sha: 3172f6e957713c2d9fca462cc16068222fd1b9d3
+  size: 12164712
+pytz/pytz-2014.10.tar.gz:
+  object_id: 0bfd1538-9637-42e0-b480-3d7f7df48752
+  sha: e468a626c8a7daa9a358ef83f1aa8e3656b00a77
+  size: 283834
+sqlite/sqlite-autoconf-3130000.tar.gz:
+  object_id: db4cb319-5839-4b7e-9295-2b8cfdf92f22
+  sha: f6f76e310389e3f510b23826f805850449ae8653
+  size: 2459805
+statsd/statsd-0.7.2.tar.gz:
+  object_id: 89e57838-e5ab-4567-9fac-f982d0537360
+  sha: f1bc31bda192fe7351253d98f275c8b626358596
+  size: 51708
+twisted/Twisted-11.1.0.tar.bz2:
+  object_id: 8ec34cdc-f1f7-4fcb-8338-304718fb5770
+  sha: 7976650e8b38691c5bffa40067feb290f967e3ea
+  size: 2823219
+whisper/whisper-0.9.12.tar.gz:
+  object_id: f771438d-95f9-44d8-95a2-a666278d5d38
+  sha: 7fbf6c2681e75b166fb3af0478d2739aa41a2585
+  size: 12588
+zope.interface/zope.interface-4.1.2.tar.gz:
+  object_id: 56386f92-9471-483b-ac10-9a28c82f2fcb
+  sha: 6d940ecd621df0437ee9deb17d03ba105c13f07f
+  size: 919277
+apr/apr-1.5.2.tar.gz:
+  object_id: 807a23d8-ee72-442d-a199-b3b53d59bfe4
+  sha: 2ef2ac9a8de7f97f15ef32cddf1ed7325163d84c
+  size: 1031613
+apr-util/apr-util-1.5.4.tar.gz:
+  object_id: 053f3e56-219f-48c8-a1de-5d6916bb091f
+  sha: 72cc3ac693b52fb831063d5c0de18723bc8e0095
+  size: 874044
+postgresql/postgresql-9.4.6.tar.gz:
+  object_id: b827e5c6-8aae-49cc-ad28-245748691f91
+  sha: bd031beebd86bf149c497525dccf57eebe5a6add
+  size: 23249307
+postgresql-common/utils.sh:
+  object_id: 7e822921-d989-4054-8ee3-4b40e1688a7f
+  sha: d6e878c29d1008ffe3e533fd84bfd5ee3412ccb0
+  size: 1834
+grafana/grafana-3.0.3-1463994644.linux-x64.tar.gz:
+  object_id: 35b36aac-8d65-41df-977b-589655b23c2b
+  sha: 48c3337c999484c49b31d0669fed0b7611cfdd78
+  size: 40460810

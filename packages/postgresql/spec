@@ -1,0 +1,8 @@
+---
+name: postgresql
+
+dependencies: {}
+
+files:
+  - postgresql/postgresql-9.4.6.tar.gz # https://ftp.postgresql.org/pub/source/v9.4.1/postgresql-9.4.6.tar.gz
+  - postgresql-common/utils.sh # Pulled from ERT Tile

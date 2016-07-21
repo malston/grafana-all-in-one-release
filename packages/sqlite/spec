@@ -1,0 +1,7 @@
+---
+name: sqlite
+
+dependencies: {}
+
+files:
+  - sqlite/sqlite-autoconf-3130000.tar.gz # https://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz
