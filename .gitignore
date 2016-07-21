@@ -4,3 +4,4 @@
 /.final_builds
 /blobs/*
 /dev_releases/*
+config/private.yml

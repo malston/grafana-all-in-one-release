@@ -3,4 +3,5 @@ blobstore:
   provider: s3
   options:
     bucket_name: bosh-grafana-all-in-one-release
-final_name: bosh-grafana-all-in-one-release
+    endpoint: https://s3.amazonaws.com/bosh-grafana-all-in-one-release
+final_name: grafana-all-in-one-release
