@@ -25,7 +25,7 @@
 
 ## Installation / Deployment
 
-1. Download the latest release from [here](https://github.com/virtmerlin/grafana-all-in-one-release/releases/latest)
+1. Download the latest release from [here](https://github.com/pivotalservices/grafana-all-in-one-release/releases/latest)
 2. Upload the release to your bosh target:
 <pre><code>bosh upload release /tmp/grafana-all-in-one-release-#.tgz</code></pre>
 3. Verify an `ubuntu-trusty` stemcell => 3262 is deployed:
@@ -37,7 +37,7 @@ Acting as user 'admin' on 'bosh'
 | bosh-azure-hyperv-ubuntu-trusty-go_agent | ubuntu-trusty | 3262.2* | bosh-stemcell-48e110cc-4897-440e-920c-cde986456f1a |
 +------------------------------------------+---------------+---------+----------------------------------------------------+
 </code></pre>
-4. Generate a manifest for grafana-all-in-one-release.  Sample manifests can be found [here](https://github.com/virtmerlin/grafana-all-in-one-release/tree/master/sample_manifests)
+4. Generate a manifest for grafana-all-in-one-release.  Sample manifests can be found [here](https://github.com/pivotalservices/grafana-all-in-one-release/tree/master/sample_manifests)
 	* There are `cloud-config` samples for multiple cpi's.   Cloud config manifests are deployed as such after the samples have been updated for your IaaS:
 	*  <pre><code>bosh update cloud-config sample_manifests/cloud-config-[IAAS]/cloud-config.yml
 </code></pre>
@@ -57,7 +57,7 @@ bosh -n deploy</code></pre>
 
 Documentation on the bosh release development process can be found [here](https://bosh.io/docs/create-release.html).
 
-Please file any bugs/prs [here](https://github.com/virtmerlin/grafana-all-in-one-release/issues)
+Please file any bugs/prs [here](https://github.com/pivotalservices/grafana-all-in-one-release/issues)
 
 Helpful notes:
 
