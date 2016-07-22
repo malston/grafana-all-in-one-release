@@ -10,7 +10,7 @@ name: <%= deployment_name %>
 director_uuid: <%= director_uuid %>
 
 releases:
-- name: bosh-grafana-all-in-one-release
+- name: grafana-all-in-one-release
   version: <%= release_version %>
 
 stemcells:
@@ -29,7 +29,7 @@ instance_groups:
   - name: default
   jobs:
   - name: grafana
-    release: bosh-grafana-all-in-one-release
+    release: grafana-all-in-one-release
     properties:
       grafana:
         listen_port: 80
@@ -52,7 +52,7 @@ instance_groups:
           user: grafana
           password: "gr4f4n4"
   - name: carbon
-    release: bosh-grafana-all-in-one-release
+    release: grafana-all-in-one-release
     properties:
       carbon:
         storage_schemas:
@@ -72,7 +72,7 @@ instance_groups:
             xFilesFactor: "0.1"
             aggregationMethod: "max"
   - name: graphite-web
-    release: bosh-grafana-all-in-one-release
+    release: grafana-all-in-one-release
     properties:
       graphite-web:
         time_zone: America/Chicago
@@ -88,10 +88,10 @@ instance_groups:
         wsgi:
           inactivity-timeout: 60
   - name: statsd
-    release: bosh-grafana-all-in-one-release
+    release: grafana-all-in-one-release
     properties: {}
   - name: postgresql
-    release: bosh-grafana-all-in-one-release
+    release: grafana-all-in-one-release
     properties:
       databases:
         db_scheme: postgres
