@@ -1,0 +1,49 @@
+azs:
+- name: az1
+
+networks:
+- name: default
+  type: manual
+  subnets:
+  - range: 192.168.10.0/24
+    gateway: 192.168.10.1
+    dns: [168.63.129.16]
+    azs: [az1]
+    reserved:
+    - 192.168.10.1-192.168.10.9
+    cloud_properties:
+      virtual_network_name: cf-vnet
+      subnet_name: Bosh
+
+
+vm_types:
+- name: default
+  cloud_properties:
+    instance_type: Standard_D2
+- name: grafana-node
+  cloud_properties:
+    instance_type: Standard_D2
+    storage_account_name: cust0cfdefaultsa
+    storage_access_key: CHANGE_ME!!!!!!!
+    availability_set: grafana-node
+    platform_update_domain_count: 5
+    platform_fault_domain_count: 3
+    ephemeral_disk:
+      size: 30_720
+  env:
+    bosh:
+      password: "$6$4gDD3aV0rdqlrKC$2axHCxGKIObs6tAmMTqYCspcdvQXh3JJcvWOY2WGb4SrdXtnCyNaWlrf3WEqvYR2MYizEGp3kMmbpwBC6jsHt0"
+      # c1oudc0w is a default password for vcap user
+
+
+disk_pools:
+- name: grafana-disk
+  disk_size: 20_480
+
+
+compilation:
+  workers: 4
+  reuse_compilation_vms: true
+  az: az1
+  vm_type: default
+  network: default

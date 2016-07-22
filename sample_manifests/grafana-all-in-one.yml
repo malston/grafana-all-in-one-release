@@ -1,0 +1,114 @@
+<%
+  # Update these properties as required
+  deployment_name  = 'c0-grafana-azure'
+  director_uuid    = 'CHANGE_ME!!!!!!!'
+  release_version = 'latest'
+  stemcell_version = 'latest'
+%>
+
+name: <%= deployment_name %>
+director_uuid: <%= director_uuid %>
+
+releases:
+- name: bosh-grafana-all-in-one-release
+  version: <%= release_version %>
+
+stemcells:
+- alias: trusty
+  os: ubuntu-trusty
+  version: <%= stemcell_version %>
+
+instance_groups:
+- name: grafana-node
+  instances: 1
+  vm_type: grafana-node
+  stemcell: trusty
+  persistent_disk_pool: grafana-disk
+  azs: [az1]
+  networks:
+  - name: default
+  jobs:
+  - name: grafana
+    release: bosh-grafana-all-in-one-release
+    properties:
+      grafana:
+        listen_port: 80
+        admin_username: grafana
+        admin_password: "gr4f4n4"
+        users:
+          allow_sign_up: true
+          auto_assign_organization: true
+        datasource:
+          url: "http://127.0.0.1:8080"
+          name: graphite
+          database_type: graphite
+          user: any
+          password: any
+          database_name: any
+        database:
+          type: postgres
+          host: 127.0.0.1:5432
+          name: grafana
+          user: grafana
+          password: "gr4f4n4"
+  - name: carbon
+    release: bosh-grafana-all-in-one-release
+    properties:
+      carbon:
+        storage_schemas:
+          - name: "my_storage_schema"
+            pattern: "^my\\.metrics\\.*" # NB: Note the double escapes - this will evaluate to "^my\.metrics\.*"
+            retentions: "60s:1d"
+          - name: "my_storage_schema_2"
+            pattern: "metrics$"
+            retentions: "15s:7d,1m:21d,15m:5y"
+        storage_aggregations:
+          - name: "my_storage_aggregation"
+            pattern: "^my\\.metrics\\.*" # NB: Note the double escapes - this will evaluate to "^my\.metrics\.*"
+            xFilesFactor: "0.5"
+            aggregationMethod: "average"
+          - name: "my_storage_aggregation_2"
+            pattern: "metrics$"
+            xFilesFactor: "0.1"
+            aggregationMethod: "max"
+  - name: graphite-web
+    release: bosh-grafana-all-in-one-release
+    properties:
+      graphite-web:
+        time_zone: America/Chicago
+        httpd:
+          port: 8080
+        db:
+          engine: postgresql_psycopg2
+          name: graphite-web
+          user: grafana
+          password: "gr4f4n4"
+          host: 127.0.0.1
+          port: 5432
+        wsgi:
+          inactivity-timeout: 60
+  - name: statsd
+    release: bosh-grafana-all-in-one-release
+    properties: {}
+  - name: postgresql
+    release: bosh-grafana-all-in-one-release
+    properties:
+      databases:
+        db_scheme: postgres
+        port: 5432
+        log_line_prefix: grafana-db
+        databases:
+        - tag: graphite-web
+          name: graphite-web
+        - tag: grafana
+          name: grafana
+        roles:
+        - tag: grafana
+          name: grafana
+          password: "gr4f4n4"
+update:
+  canaries: 1
+  max_in_flight: 1
+  serial: false
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000
