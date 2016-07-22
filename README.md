@@ -16,6 +16,8 @@
 - Will auto-deploy `grafana` ( defaults to 80 )
 - Will auto-register the `graphite` instance as a source in `grafana`
 
+**_Not Intended for Production use.  Primarily for POCs & Dojos_**.
+
 ## Requirements
 
 - A functional BOSH instance on a supported IaaS/CPI 
