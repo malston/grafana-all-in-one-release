@@ -28,6 +28,7 @@
 ## Installation / Deployment
 
 1. Download the latest release from [here](https://github.com/pivotalservices/grafana-all-in-one-release/releases/latest).
+<pre><code>wget "https://s3.amazonaws.com/bosh-grafana-all-in-one-release/releases/grafana-all-in-one-release-1.tgz"</code></pre>
 2. Upload the release to your bosh target:
 <pre><code>bosh upload release /tmp/grafana-all-in-one-release-#.tgz</code></pre>
 3. Verify an `ubuntu-trusty` stemcell => 3262 is deployed:
